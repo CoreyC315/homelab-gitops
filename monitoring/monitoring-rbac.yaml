@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: flux-applier-admin-binding
+  namespace: monitoring
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin # This is a built-in Kubernetes role
+subjects:
+  - kind: ServiceAccount
+    name: flux-applier
+    namespace: monitoring
