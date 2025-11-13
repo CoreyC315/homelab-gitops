@@ -2,6 +2,6 @@
 # instead of Docker Hub, avoiding rate limits.
 cleanupJobs:
   image:
-    registry: public.ecr.aws
+    registry: docker.io
     repository: bitnami/kubectl
     tag: "1.28.5"
