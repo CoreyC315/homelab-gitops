@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
+apiVersion: helm.toolkit.fluxcd.io/v2beta2 # <-- FIX #1: Correct API version
 kind: HelmRelease
 metadata:
   name: kyverno
@@ -11,8 +11,9 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: kyverno
-      version: "3.2.x"
+      version: "3.2.x" # This is fine, it will pick the latest 3.2 patch
   values:
+    # Your existing resource requests
     resources:
       requests:
         cpu: 50m
@@ -21,12 +22,10 @@ spec:
         cpu: 200m
         memory: 256Mi
 
-    # --- THIS BLOCK IS NOW UNCOMMENTED ---
-    # This overrides the cleanup job image to pull from AWS ECR
-    # instead of Docker Hub, avoiding rate limits.
+    # --- FIX #2: Point to the official k8s-maintained kubectl image ---
     cleanupJobs:
       image:
-        registry: public.ecr.aws
-        repository: bitnami/kubectl
-        tag: "1.28.5" # Use the same tag it was already failing to pull
-    # ------------------------------------
+        registry: registry.k8s.io # Official K8s registry
+        repository: kubectl # Official repository name
+        tag: "v1.28.5" # Official tag (note the 'v' prefix)
+    # ----------------------------------------------------------------
