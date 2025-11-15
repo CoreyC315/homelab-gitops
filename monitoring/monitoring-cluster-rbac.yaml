@@ -10,3 +10,5 @@ subjects:
   - kind: ServiceAccount
     name: flux-applier
     namespace: monitoring
+# This ClusterRoleBinding gives the flux-applier ServiceAccount
+# cluster-admin permissions in the monitoring namespace, which
