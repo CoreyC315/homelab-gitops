@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: flux-test-config
-  namespace: security # <-- Deploying to the 'security' namespace
-data:
-  message: "Flux is working!"
-  timestamp: "2025-11-15T14:30:00"
