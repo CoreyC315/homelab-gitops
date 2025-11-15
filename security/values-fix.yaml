@@ -1,7 +1,0 @@
-# This block overrides the cleanup job image to pull from AWS ECR
-# instead of Docker Hub, avoiding rate limits.
-cleanupJobs:
-  image:
-    registry: docker.io
-    repository: bitnami/kubectl
-    tag: "1.28.5"
