@@ -1,7 +1,0 @@
-# clusters/homelab/kustomization.yaml
-# This is the entry point Flux will read.
-# Its only rule is to include the master 'apps' directory.
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - ../../apps # Points to the 'apps' folder at the root
