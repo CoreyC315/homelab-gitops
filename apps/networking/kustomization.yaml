@@ -1,0 +1,8 @@
+# apps/networking/kustomization.yaml
+# This file will include all apps in the 'networking' category.
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - traefik
+  - pihole
+#  - metallb # Uncomment to enable MetalLB a load balancer for bare metal clusters
