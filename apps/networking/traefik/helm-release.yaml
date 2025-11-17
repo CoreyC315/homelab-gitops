@@ -1,0 +1,21 @@
+# apps/networking/traefik/helm-release.yaml
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: kube-system # We'll install Traefik in its own namespace
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: traefik
+      version: "v27.0.3" # Using a specific version is good practice
+      sourceRef:
+        kind: HelmRepository
+        name: traefik-charts
+      interval: 15m
+  # These are basic values to get you started
+  values:
+    ports:
+      web:
+        redirectTo: websecure
