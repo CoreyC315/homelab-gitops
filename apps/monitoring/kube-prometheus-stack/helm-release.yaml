@@ -13,7 +13,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
-        namespace: cluster-config
+        namespace: cluster-config # <--- THIS IS THE MISSING LINE
       interval: 15m
   values:
     # Set the admin password for your Grafana dashboard
