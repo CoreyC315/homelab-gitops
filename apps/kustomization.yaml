@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   # We will add networking, monitoring, etc. here
   - networking
+  - monitoring
