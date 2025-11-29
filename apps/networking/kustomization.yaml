@@ -1,7 +1,0 @@
-# apps/networking/kustomization.yaml
-# This file will include all apps in the 'networking' category.
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-resources:
-  - traefik
-  - pihole

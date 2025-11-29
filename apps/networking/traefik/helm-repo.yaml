@@ -1,9 +1,0 @@
-# apps/networking/traefik/helm-repo.yaml
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: traefik-charts
-  namespace: cluster-config # This should match your Flux namespace
-spec:
-  interval: 1h
-  url: https://helm.traefik.io/traefik

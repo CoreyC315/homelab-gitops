@@ -1,9 +1,0 @@
-# This tells Flux where to find the chart
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: prometheus-community
-  namespace: cluster-config # Place this in the Flux namespace
-spec:
-  interval: 1h
-  url: https://prometheus-community.github.io/helm-charts
